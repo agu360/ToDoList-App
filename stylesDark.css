@@ -5,6 +5,11 @@
     --textPrincipalDark:#e0e6f0;
     --textSecondaryDark:#8795a2;
     --taskBackgroundDark:#1d2833;
+    --backgroundButtonRemove:#432830;
+}
+
+.algo{
+    --backgroundDark:red;
 }
 
 
@@ -130,7 +135,7 @@ hr {
     border: none;
     
     button{
-        background-color: #432830 !important;
+        background-color: var(--backgroundButtonRemove)!important;
         color: rgb(235, 79, 105) !important;
     }
     

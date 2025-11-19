@@ -1,6 +1,31 @@
+/* DARK MODE */
+
+:root{
+    --background : #ffff;
+    --textPrincipal:#0c0c0c;
+    --textSecondary:#0c0c0c;
+    --taskBackground:rgba(246, 247, 248);
+    --textActiveButton:rgba(73, 151, 238);
+    --backgroundButtonRemove:rgba(253, 235, 238);
+    --taskBackgroundList:#ffff;
+    
+
+}
+
+.darkMode{
+    --background:#101922;
+    --textPrincipal:#e0e6f0;
+    --textSecondary:#8795a2;
+    --taskBackground:#1d2833;
+    --backgroundButtonRemove:#432830;
+    --textActiveButton:#0c0c0c;
+    --taskBackgroundList:#1d2833
+}
+
 body{
     padding-left: 6rem;
     padding-right: 6rem;
+    background-color: var(--background) !important;
 }
 
 header{
@@ -11,6 +36,7 @@ header{
     
     h1{
         font-size: 2rem;
+        color: var(--textPrincipal) !important;
     }
 }
 
@@ -49,7 +75,14 @@ header{
     }
     input{
         height: 3rem;
+        background-color: var(--taskBackground) !important;
+        color: var(--textSecondary) !important;
+
     }
+     input::placeholder{
+        color: var(--textSecondary)!important;
+    }
+
     button:active {
     background-color:  rgba(21, 127, 235, 0.5) !important; 
     transform: scale(0.98); 
@@ -83,14 +116,23 @@ hr {
     }
 }
 
+.filter .btn-group button{
+        color:var(--textSecondary) !important;
+
+}
+
 .filter .btn-group .active{
     background-color: rgba(255, 255, 255) !important;
     border: none;
     border-radius: 20% !important;
-    color: rgba(73, 151, 238);
+    color: var(--textActiveButton) !important;
 }
 
 /* TAREAS A REALIZAR */
+
+#taskQuantity{
+    color: var(--textSecondary);
+}
 
 .tasks{
     margin-top: 2rem;
@@ -99,9 +141,11 @@ hr {
 .tasks  .list-group .list-group-item{
     display: flex;
     justify-content: space-between;
+    background-color: var(--taskBackgroundList);
+    color: var(--textPrincipal);
     
     button{
-        background-color: rgba(253, 235, 238) !important;
+        background-color: var(--backgroundButtonRemove) !important;
         color: rgb(235, 79, 105) !important;
     }
     

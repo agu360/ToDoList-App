@@ -119,3 +119,11 @@ listaDeItems.addEventListener("change", function(event) {
     updateTaskCount();
   }
 });
+
+//DARK MODE FUNCTION
+
+const darkModeButton = document.getElementById("darkMode")
+darkModeButton.addEventListener("click", function() {
+  let element = document.body;
+  element.classList.toggle("darkMode");
+})
