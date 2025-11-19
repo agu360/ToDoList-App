@@ -1,0 +1,128 @@
+body{
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+
+header{
+    display: flex;
+    padding: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    
+    h1{
+        font-size: 2rem;
+    }
+}
+
+.avatar{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    vertical-align: middle;
+    
+    p{
+        margin: 0;
+        line-height: 1;
+    }
+
+    
+  .dark{
+            width: 30px;
+            align-items: center;
+            cursor: pointer;
+            border: none;
+        }
+    
+    img{
+        width: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        
+    }
+}
+
+.insertTask{
+    button{
+        background-color: rgba(21, 127, 235) !important;
+        color: white;
+        border: none;
+    }
+    input{
+        height: 3rem;
+    }
+    button:active {
+    background-color:  rgba(21, 127, 235, 0.5) !important; 
+    transform: scale(0.98); 
+}
+}
+
+hr {
+  height: 1px; 
+  background-color: black; 
+  border: none; 
+}
+/* Filtros de activado */
+.filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span{
+        color: rgba(160, 160, 160);
+    }
+}
+.filter .btn-group{
+    background-color: rgba(246, 247, 248)!important;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    
+
+    a{
+        font-size: 12px;
+        color: rgba(177, 178, 178) ;
+    }
+}
+
+.filter .btn-group .active{
+    background-color: rgba(255, 255, 255) !important;
+    border: none;
+    border-radius: 20% !important;
+    color: rgba(73, 151, 238);
+}
+
+/* TAREAS A REALIZAR */
+
+.tasks{
+    margin-top: 2rem;
+}
+
+.tasks  .list-group .list-group-item{
+    display: flex;
+    justify-content: space-between;
+    
+    button{
+        background-color: rgba(253, 235, 238) !important;
+        color: rgb(235, 79, 105) !important;
+    }
+    
+    button:active {
+        background-color:rgb(238, 11, 11, 0.8) !important;
+        color: white !important;
+        transform: scale(0.98); /* Reduce ligeramente el tamaño */
+    }
+    img{
+        border-style:   rgb(235, 79, 105) !important;
+        
+    }
+    .form-check-input{
+        border-radius: 50%;
+    }
+  
+}
+
+  .hidden{
+    display: none !important;
+}
+
+
+
