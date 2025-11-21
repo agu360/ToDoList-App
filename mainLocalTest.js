@@ -1,8 +1,8 @@
 console.log("funciona JS");
-
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 tasks.forEach(t => renderTask(t.text, t.completed));
+
 
 
 // FUNCION PARA AGREGAR TAREAS.
@@ -34,6 +34,7 @@ button.addEventListener("click", function () {
 
 });
 
+
 // RENDERIZADO DE TAREAS 
 
 function renderTask(text, completed) {
@@ -58,42 +59,24 @@ function renderTask(text, completed) {
   listaDeItems.appendChild(li);
 }
 
+
 // FUNCION PARA REMOVER TAREAS
 
 const listaDeItems = document.getElementById("listItems");
 
 listaDeItems.addEventListener("click", function (event) {
- if (event.target.closest("button")) {
-    const li = event.target.closest("li");
-    const text = li.querySelector("label").textContent;
+  const boton = event.target.closest("button");
+  if (!boton) return;
 
-    // eliminar del array
-    tasks = tasks.filter(t => t.text !== text);
+  if (boton.id === "button-addon2-remove") {
+    // 4. Buscar el <li> al que pertenece
+    const li = boton.closest("li");
 
-    // guardar
-    localStorage.setItem("tasks", JSON.stringify(tasks))
-
+    // 5. Eliminar o esconder ese li
+    // li.classList.add("hidden")
+    // O directamente:
     li.remove();
     updateTaskCount()
-  }
-});
-
-
-
-// Cuando cambiás un checkbox
-listaDeItems.addEventListener("change", function(event) {
-  if (event.target.type === "checkbox") {
-    const li = event.target.closest("li");
-    const text = li.querySelector("label").textContent;
-
-    // buscar en array y actualizar
-    tasks = tasks.map(t =>
-      t.text === text ? { ...t, completed: event.target.checked } : t
-    );
-
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-
-    updateTaskCount();
   }
 });
 
@@ -158,9 +141,7 @@ listaDeItems.addEventListener("change", function(event) {
 //DARK MODE FUNCTION
 
 const darkModeButton = document.getElementById("darkMode")
-darkModeButton.addEventListener("click", darkMode)
-
-function darkMode () {
-    let element = document.body;
+darkModeButton.addEventListener("click", function() {
+  let element = document.body;
   element.classList.toggle("darkMode");
-}
+})

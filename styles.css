@@ -8,6 +8,8 @@
     --textActiveButton:rgba(73, 151, 238);
     --backgroundButtonRemove:rgba(253, 235, 238);
     --taskBackgroundList:#ffff;
+    --moonFill:black;
+
     
 
 }
@@ -19,7 +21,8 @@
     --taskBackground:#1d2833;
     --backgroundButtonRemove:#432830;
     --textActiveButton:#0c0c0c;
-    --taskBackgroundList:#1d2833
+    --taskBackgroundList:#1d2833;
+    --moonFill:white;
 }
 
 body{
@@ -52,12 +55,16 @@ header{
     }
 
     
-  .dark{
+  .darkButton{
             width: 30px;
             align-items: center;
             cursor: pointer;
             border: none;
         }
+    .darkButton path{
+        fill: var(--moonFill);
+        stro        
+    }
     
     img{
         width: 30px;
