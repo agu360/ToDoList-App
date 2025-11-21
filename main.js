@@ -1,16 +1,14 @@
-console.log("funciona JS");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 tasks.forEach(t => renderTask(t.text, t.completed));
+updateTaskCount();
 
 
 // FUNCION PARA AGREGAR TAREAS.
 const button = document.getElementById("button-addon2");
-console.log(button);
 
 const ulS = document.getElementById("listItems");
-console.log(ulS.value)
 
 button.addEventListener("click", function () {
   console.log("click en el boton");
@@ -81,6 +79,8 @@ listaDeItems.addEventListener("click", function (event) {
 
 
 // Cuando cambiás un checkbox
+
+
 listaDeItems.addEventListener("change", function(event) {
   if (event.target.type === "checkbox") {
     const li = event.target.closest("li");
@@ -103,7 +103,7 @@ listaDeItems.addEventListener("change", function(event) {
 // FUNCION PARA FILTRAR TAREAS
 const filters = document.getElementById("filters");
 
-filters.addEventListener("click", function(event) {
+function filtered (){
   if (!event.target.matches("button")) return; // Ignora clicks fuera de botones
 
   const filtro = event.target.dataset.filter;
@@ -130,7 +130,9 @@ filters.addEventListener("click", function(event) {
       checked ? li.classList.remove("hidden") : li.classList.add("hidden");
     }
   });
-});
+}
+
+filters.addEventListener("click", filtered);
 
 
 
